@@ -21,7 +21,7 @@ try:
     data=json_result['data']
     print(type(data),":",data)
     
-
+    
     #print(json)
 except Exception as e:
     print('%s %s' % (e, datetime.now()) , file=sys.stderr)
