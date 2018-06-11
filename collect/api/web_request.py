@@ -49,18 +49,18 @@ def json_request(url='',encoding='utf-8',success=None,error=lambda e:print('%s %
         # 데이터는 동영상 , 이미지 전부 바이트
         #
 
-        resp_body = resp.read().decode("utf-8")
+        resp_body = resp.read().decode(encoding)
         # print(html)
         json_result = json.loads(resp_body)
-        data = json_result['data']
-        print(type(data), ":", data)
+        # data = json_result['data']
+        # print(type(data), ":", data)
 
         print('%s: success for request[%s]' % (datetime.now(), url))
 
         if callable(success) is False:
-            return resp_body
+            return json_result
 
-        success(resp_body)
+        success(json_result)
 
     except Exception as e:
         if callable(error) is True:
