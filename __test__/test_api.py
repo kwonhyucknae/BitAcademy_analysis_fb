@@ -13,8 +13,22 @@ print(id)
 #api.fb_gen_url()
 
 
+
+
+
+'''
+
 posts=api.fb_fetch_posts('jtbcnews','2017-01-01','2017-12-31')
 print(len(posts))
+
+'''
+
+
+
+# yield 로 한거 생성
+
+for posts in api.fb_fetch_posts('jtbcnews','2017-01-01','2017-12-31'):
+    print(posts)
 #print(posts)
 
 

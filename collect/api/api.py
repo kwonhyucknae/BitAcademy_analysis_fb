@@ -25,6 +25,46 @@ def fb_name_to_id(pagename):
 
 
 
+#yield로 만들기
+
+def fb_fetch_posts(pagename,since,until):
+    url = fb_gen_url(
+        node=fb_name_to_id(pagename) + "/posts",
+        fields='id,message,link,name,type,shares,reactions,created_time,comments.limit(0).summary(true).limit(0).summary(true)',
+        since=since,
+        until=until,
+        limit=50,
+        access_token=ACCESS_TOKEN
+    )
+
+    print("url======"+url)
+
+    #빈 리스트 생성
+
+    isnext=True
+    while isnext is True:
+        json_result = json_request(url=url)
+
+        #삼항연산자로 적으면 이렇게
+        paging = None if json_result is None else json_result.get('paging')
+        posts=None if json_result is None else json_result.get('data')
+    #리스트를 더해준다
+
+        #results+=posts
+
+        #탈출 조건 생성
+        url =None if paging is None else paging.get("next")
+
+        isnext = url is not None
+
+        yield posts
+    #for문 안에서 yield
+
+
+
+
+
+'''
 def fb_fetch_posts(pagename,since,until):
     url = fb_gen_url(
         node=fb_name_to_id(pagename) + "/posts",
@@ -57,6 +97,8 @@ def fb_fetch_posts(pagename,since,until):
         isnext = url is not None
 
     return results
+'''
+
 
  #삼항을 if문으로 할때는 이렇게
 
