@@ -1,7 +1,4 @@
 from konlpy.tag import Kkma
-import os
-java_home=os.getenv('JAVA_HOME')
-
 
 
 
