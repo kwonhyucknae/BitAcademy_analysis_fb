@@ -13,11 +13,7 @@ print(id)
 
 #api.fb_gen_url()
 
-
-
-
 '''
-
 posts=api.fb_fetch_posts('jtbcnews','2017-01-01','2017-12-31')
 print(len(posts))
 
