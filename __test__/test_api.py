@@ -10,8 +10,8 @@ from analysis_fb.collect.api import api
 id=api.fb_name_to_id("jtbcnews")
 print(id)
 """
-#api.fb_gen_url()
 
+#api.fb_gen_url()
 
 
 

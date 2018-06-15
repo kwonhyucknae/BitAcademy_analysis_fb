@@ -2,7 +2,7 @@
 from urllib.parse import urlencode
 from .web_request import json_request
 
-ACCESS_TOKEN="EAACEdEose0cBAHudPE09tXxw3ZCV42BiHbp9IA11svs4jIlZBulDAdPEoR18ji2ZCbKZCcfIg9BdwuVw23sc0dlMnxrGzjhC06TF7V37yYjOGl3zTxF3jArJBXiFsuLwisZBK7XmWIOZBxWsyZAYqvTcZB8GzT0uS17TEXBvvR5O9xai6HvNdydfZAYxLMRJ5IEIZD"
+ACCESS_TOKEN="EAACEdEose0cBAIEKJKL252ZAxLZCSrS42QAGy9abtOqVAIriUR3U33xLaFXR1iAXyRHSkmQDehnK7dEEJC3WwXUqQ0LsZCQ7bsik5vNenXqZAIERHe18xI7ZBlbUIcmKySLW0TRHmHtfqvmpugrS7G2dtZCrDpxizrg30BQW5H2KUBSN4IQsvb6JFqlIZCTOAgZD"
 BASE_URL_FB_API= "https://graph.facebook.com/v3.0"
 
 
@@ -26,6 +26,8 @@ def fb_name_to_id(pagename):
 
 
 #yield로 만들기
+#크롤러를 만든기 위한 기반함수
+#모듈화 -> 함수를 나눠준다 기능이 많으면 코드를 잘라서 사용
 
 def fb_fetch_posts(pagename,since,until):
     url = fb_gen_url(
@@ -63,8 +65,8 @@ def fb_fetch_posts(pagename,since,until):
 
 
 
-
 '''
+
 def fb_fetch_posts(pagename,since,until):
     url = fb_gen_url(
         node=fb_name_to_id(pagename) + "/posts",

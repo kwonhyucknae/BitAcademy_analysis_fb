@@ -24,16 +24,17 @@ def html_request(url='',encoding='utf-8',success=None,error=lambda e:print('%s %
         #print(html)
 
         print('%s: success for request[%s]' %(datetime.now(),url))
-
+        #callable 이란 호출이 가능하다는 것을 의미
 
         if callable(success) is False:
             return html
+
 
         success(html)
 
     except Exception as e:
         if callable(error) is True:
-            error(e)
+            print(error(e))
 
 #html_request(url='http://www.naver.com')
 
