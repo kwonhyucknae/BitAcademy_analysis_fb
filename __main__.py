@@ -15,12 +15,6 @@ if __name__=='__main__':
         resultfile = collect.crawling(**item, fetch=False)
         item['resultfile'] = resultfile
         #item['resultfile']=resultfile
-    #collect.crawling(
-    ##    'jtbcnews',
-     #   '2017-01-01',
-     #   '2017-12-31'
-    #)
-
 
 
     #데이터 분석(analyze)

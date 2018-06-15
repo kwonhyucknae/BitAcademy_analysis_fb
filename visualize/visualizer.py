@@ -2,6 +2,7 @@ import os
 import pytagcloud
 
 RESULT_DIRECTORY = "__result__/visualization"
+#result 뒤에 s 하나 더 붙였다가 계속 오류 났엇음
 
 
 def wordcloud(filename, wordfreq):
