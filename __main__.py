@@ -41,12 +41,14 @@ if __name__=='__main__':
         # } 식으로 되어있음 여기서 120,50 등을 y로 쓰겟다.
         # ticks = 뉴스룸, 앵커 등을 쓰고
         visualize.graph_bar(
-            title='JTBC NEWS 단어 빈도 분석',
+            title='%s 빈도 분석' % (item['pagename']),
+            xlabel='단어',
+            ylabel='빈도',
             values=list(count_m50.values()),
             #ticks 그래프의 x 축의 값들의 문자?
             ticks=list(count_m50.keys()),
             #그리드는 격자를 그릴거냐 말거냐 옵션
-            showgrid=True,
+            showgrid=False,
             filename=filename,
             showgraph=False
         )

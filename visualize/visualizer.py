@@ -32,6 +32,27 @@ def graph_bar(title=None,xlabel=None,ylabel=None,
     fig, subplots = plt.subplots(1,1)
     subplots.bar(range(len(values)),values,align='center')
 
+    # ticks 카운트 수 셀때 썻던 collections
+    if ticks is not None and isinstance(ticks, collections.Sequence):
+        #
+        subplots.set_xticks(range(len(ticks)))
+        # 라벨링?
+        subplots.set_xticklabels(ticks, rotation=80, fontsize='xx-small')
+
+    if title is not None and isinstance(title, str):
+        subplots.set_title(title)
+
+        # xlabel
+    if xlabel is not None and isinstance(xlabel, str):
+        subplots.set_xlabel(xlabel)
+
+        # ylabel
+    if xlabel is not None and isinstance(ylabel, str):
+        subplots.set_ylabel(ylabel)
+
+    # show graph 그릴거냐 말거냐 , 어떤 기능인지 잘 모르겟음
+
+
     # show grid , True로 주면 그리고 False 로 주면 안그림
     #격자 생성??
     subplots.grid(showgrid)
@@ -44,14 +65,6 @@ def graph_bar(title=None,xlabel=None,ylabel=None,
         plt.savefig(save_filename,dpi=400,bbox_inches='tight')
 
 
-    #ticks 카운트 수 셀때 썻던 collections
-    if ticks is not None and isinstance(ticks ,collections.Sequence):
-        #
-        subplots.set_xticks(range(len(ticks)))
-        #라벨링?
-        subplots.set_xticklabels(ticks)
-
-    #show graph 그릴거냐 말거냐 , 어떤 기능인지 잘 모르겟음
 
     if showgraph:
         plt.show()
