@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from matplotlib import font_manager,rc
 import numpy as np
 from numpy.random import randn
 
@@ -65,6 +66,100 @@ def ex7():
 
     plt.show()
 
+#marker = . 일때, v 일때 화살표 , color 에는 # 값등 넣을수 있음 , linestyle = solid, -- 등 가능
+
+
+def ex8():
+    fig,subplots=plt.subplots(1,1)
+    subplots.plot([10,20,30,40],[10,20,30,40],'go--',color='#335599',linestyle='solid',marker='v')
+
+    plt.show()
+
+#같은데이터 그림 2개 그리기
+#randn() =
+def ex9():
+    fig,subplots=plt.subplots(1,1)
+    #subplots.plot([10,20,30,40],[10,20,30,40],'go--',color='#335599',linestyle='solid',marker='v')
+    data=randn(50).cumsum()
+    subplots.plot(data,color='black',linestyle='dashed',label='AAA')
+    #AAA 그래프
+    subplots.plot(data,color='blue',drawstyle='steps-mid',label='BBB')
+    #BBB 그래프 계단형
+
+    #best 그래프 그리기 좋은곳 창 크기 달라졌을때 가장 best 한곳에 위치 됨 그래프가
+    plt.legend(loc='best')
+    plt.show()
+
+
+#xticks는 스케일과 연관
+
+def ex10():
+    fig,subplots=plt.subplots(1,1)
+    subplots.plot(randn(50).cumsum())
+    subplots.set_xticks([0,100,200,300,400,500,600,700,800,900])
+    plt.show()
+
+#xtickslabels 과의 차이?
+
+def ex11():
+    fig,subplots=plt.subplots(1,1)
+
+    #스케일과 관련된놈
+    subplots.plot(randn(1000).cumsum())
+    subplots.set_xticks([0,100,200,300,400,500,600,700,800,900])
+
+
+
+    subplots.set_xticklabels(['pt0','pt1','pt2','pt3','pt4','pt5','pt6','pt7','pt8','pt9'],
+                             rotation=30,
+                             fontsize='small'
+                             )
+    subplots.set_xlabel('Points')
+    subplots.set_title('Matplotlib Test')
+
+    plt.show()
+
+
+def ex12():
+    fig, subplots = plt.subplots(1, 1)
+
+    subplots.plot(randn(1000).cumsum(), 'k', label='one')
+    subplots.plot(randn(1000).cumsum(), 'k-.', label='two')
+    subplots.plot(randn(1000).cumsum(), 'k.', label='three')
+
+    plt.legend(loc='best')
+    plt.show()
+
+
+#한글 깨짐
+
+def ex13():
+    #폰트 알아내기?
+    #font_filename = 'c:/Windows/fonts/malgun.ttf'
+    #font_name = font_manager.FontProperties(fname=font_filename).get_name()
+    #print(font_name)
+
+    #폰트 사용? 이거 넣은 후에 한글 제대로 나옴
+    font_options = {'family': 'Malgun Gothic'}
+    plt.rc('font', **font_options)
+    plt.rc('axes', unicode_minus=False)
+
+    fig, subplots = plt.subplots(1, 1)
+
+    subplots.plot(randn(1000).cumsum(), 'k', label='기본')
+    subplots.plot(randn(1000).cumsum(), 'k--', label='대시')
+    subplots.plot(randn(1000).cumsum(), 'k.', label='점')
+
+    subplots.set_xticklabels(
+        ['pt0', 'pt1', 'pt2', 'pt3', 'pt4', 'pt5', 'pt6', 'pt7', 'pt8', 'pt9', 'pt10'],
+        rotation=30,
+        fontsize='small')
+    subplots.set_xlabel('포인트')
+    subplots.set_title('예제12 한글처리')
+    plt.legend(loc='best')
+
+    plt.show()
+
 
 if __name__ == '__main__':
     # ex1()
@@ -73,4 +168,10 @@ if __name__ == '__main__':
     # ex4()
     #ex5()
     #ex6()
-    ex7()
+    #ex7()
+    #ex8()
+    #ex9()
+    #ex10()
+    #ex11()
+    #ex12()
+    ex13()

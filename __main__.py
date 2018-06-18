@@ -34,5 +34,22 @@ if __name__=='__main__':
         filename="%s_%s_%s" %(item['pagename'],item['since'],item['until'])
         visualize.wordcloud(filename,count_m50)
 
+        # 6주차 그래프를 파일로 저장
+        #count_m50 =
+        # {"뉴스룸"=120,
+        #"앵커":50,
+        # } 식으로 되어있음 여기서 120,50 등을 y로 쓰겟다.
+        # ticks = 뉴스룸, 앵커 등을 쓰고
+        visualize.graph_bar(
+            title='JTBC NEWS 단어 빈도 분석',
+            values=list(count_m50.values()),
+            #ticks 그래프의 x 축의 값들의 문자?
+            ticks=list(count_m50.keys()),
+            #그리드는 격자를 그릴거냐 말거냐 옵션
+            showgrid=True,
+            filename=filename,
+            showgraph=False
+        )
+        #filename 이 있고 showgraph false 이므로 저장된다
 print('run analysis_fb...')
 
