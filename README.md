@@ -11,7 +11,13 @@ Facebook API analysis
 
 사용 라이브러리 :konlypy , matplotlib ,jpype1 , pygame , pytagcloud
 
+
+# 결과물
+
 ![capture1](https://user-images.githubusercontent.com/18182656/41819964-fbb2f3d8-7804-11e8-97ea-5c83996d7d33.JPG)
+
+
+![capture2](https://user-images.githubusercontent.com/18182656/41819983-23d2b70e-7805-11e8-8370-37a457856b85.JPG)
 
 
 
