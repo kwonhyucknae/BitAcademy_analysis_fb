@@ -1,4 +1,4 @@
-# BitAcademy_analysis_fb
+# _analysis_fb
 Facebook API analysis
 
 페이스북의 포스트를 수집후
