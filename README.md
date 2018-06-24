@@ -11,6 +11,9 @@ Facebook API analysis
 
 사용 라이브러리 :konlypy , matplotlib ,jpype1 , pygame , pytagcloud
 
+![capture1](https://user-images.githubusercontent.com/18182656/41819964-fbb2f3d8-7804-11e8-97ea-5c83996d7d33.JPG)
+
+
 
 
 # 개발 환경 설정 방법
