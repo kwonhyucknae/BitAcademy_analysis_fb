@@ -12,7 +12,7 @@ Facebook API analysis
 
 시각화
 
-#개발 환경 설정 방법
+# 개발 환경 설정 방법
 (windows)
 python 설치
 
@@ -28,4 +28,4 @@ File -> settings -> Project Interpreter -> + 버튼 클릭 (패키지 추가)
 
 ->(시각화) matplotlib 패키지 인스톨
 
-#주의
+# 주의
