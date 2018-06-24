@@ -28,15 +28,15 @@ File -> Project Interpreter -> Show all -> Python 설치 위치 등록
 
 File -> settings -> Project Interpreter -> + 버튼 클릭 (패키지 추가)
 
-*(한글 형태소 분석 오픈소스) konlypy 패키지 인스톨
+<li>(한글 형태소 분석 오픈소스) konlypy 패키지 인스톨</li>
 
-*jpype1 패키지 
+<li>jpype1 패키지</li> 
 
-*(시각화) matplotlib 패키지 인스톨
+<li>(시각화) matplotlib 패키지 인스톨</li>
 
-*pygame 설치
+<li>pygame 설치</li>
 
-*pytagcloud 설치
+<li>pytagcloud 설치</li>
 
 pytagcloud 한글처리
 
