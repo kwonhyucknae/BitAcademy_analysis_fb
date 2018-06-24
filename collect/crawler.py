@@ -34,7 +34,9 @@ def preprocess_post(post):
     post['created_time']=kst.strftime('%Y-%m-%d %H:%M:%S')
 
 
-
+#fb_fetch_posts 로 얻어온 포스트를
+#전처리를 통해 원하는 결과를 얻고
+#그 결과를 파일에 넣는 함수
 def crawling(pagename,since,until,fetch=True):
 
     results=[]

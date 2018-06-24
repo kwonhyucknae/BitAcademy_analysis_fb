@@ -1,4 +1,4 @@
-from analysis_fb.collect.api import web_request as wr
+from Bit_analysis_fb.collect.api import web_request as wr
 
 url='http://kickscar.cafe24.com:8080/myapp-api/api/user/list'
 
